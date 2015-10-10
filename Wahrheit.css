@@ -1,0 +1,330 @@
+/* Top Level */
+
+#WahrheitContainer {
+	margin: 10px auto;
+	width: 98%;
+	height: auto;
+	border: 1px solid gray;
+}
+
+/* Box Level */
+
+#WahrheitTitleBox {
+	background-color: lightgray;
+	border: 1px solid gray;
+	height: auto;
+	margin: 2px;
+}
+#WahrheitToolBox {
+	background-color: lightgray;
+	border: 1px solid gray;
+	height: auto;
+	margin: 2px;
+	padding: 0px 2.5%;
+}
+#WahrheitContentBox {
+	background-color: lightgray;
+	border: 1px solid gray;
+	height: auto;
+	margin: 2px;
+}
+
+/* Component Level */
+
+#WahrheitContentEditor {
+	float: left;
+	width: 50%;
+	margin: 0px;
+	padding: 0px;
+	height: 500px;
+}
+#WahrheitContentViewer {
+	float: right;
+	width: 50%;
+	margin: 0px;
+	padding: 0px;
+	height: 500px;
+}
+
+/* Element Level */
+
+#WahrheitTitleInput {
+	display: block;
+	margin: 5px auto;
+	width: 95%;
+	height: 30px;
+	border-radius: 10px;
+	border: 1px solid #f2f2f2;
+	padding: 5px;
+	font-size: 25px;
+}
+
+#WahrheitToolBox .WahrheitToolSpace {
+	float: left;
+	margin: 1px;
+	height: 30px;
+	width: 10px;
+	text-align: center;
+	background-color: lightgray;
+}
+
+#WahrheitToolBox .WahrheitToolButton {
+	float: left;
+	margin: 1px;
+	height: 30px;
+	width: 30px;
+	text-align: center;
+	background-color: gray;
+}
+
+#WahrheitToolBox .WahrheitToolButton:hover {
+	background-color: black;
+}
+
+#WahrheitToolBox .WahrheitToolButton a {
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	line-height: 30px;
+	text-decoration: none;
+	color: white;
+	font-family: 'Georgia',serif;
+}
+#WahrheitToolBox .WahrheitToolButton a:link {
+	text-decoration: none;
+	color: white;
+}
+#WahrheitToolBox .WahrheitToolButton a:visited {
+	text-decoration: none;
+	color: white;
+}
+#WahrheitToolBox .WahrheitToolButton a:hover {
+	text-decoration: none;
+	color: white;
+}
+#WahrheitToolBox .WahrheitToolButton a:active {
+	text-decoration: none;
+	color: white;
+}
+
+#WahrheitContentEditorTA {
+	display: block;
+	position: relative;
+	top:2%;
+	width:90%;
+	height: 95%;
+	margin: auto;
+}
+#WahrheitContenViewerDiv {
+	display: block;
+	position: relative;
+	top:2%;
+	width:90%;
+	height: 95%;
+	margin: auto;
+	border: 1px solid gray;
+	overflow: auto;
+	background-color: #84b374;
+	padding: 5px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+#WahrheitContenViewerDiv p {
+	margin: 15px 0px;
+	line-height: 25px;
+	font-size: 15px;
+}
+#WahrheitContenViewerDiv h1{
+	margin: 30px 0px;
+	font-size: 35px;
+}
+#WahrheitContenViewerDiv h2{
+	margin: 25px 0px;
+	font-size: 32px;
+}
+#WahrheitContenViewerDiv h3{
+	margin: 20px 0px;
+	font-size: 27px;
+}
+#WahrheitContenViewerDiv h4{
+	margin: 15px 0px;
+	font-size: 23px;
+}
+#WahrheitContenViewerDiv h5{
+	margin: 15px 0px;
+	font-size: 20px;
+}
+#WahrheitContenViewerDiv h6{
+	margin: 15px 0px;
+	font-size: 18px;
+}
+#WahrheitContenViewerDiv hr {
+	margin: 15px 0px;
+	display: block;
+}
+#WahrheitContenViewerDiv table, table th, table td {
+	border: 1px solid silver;
+	border-collapse: collapse;
+	text-align: center;
+}
+#WahrheitContenViewerDiv table th{
+	padding: 5px 10px;
+	background: gray;
+	background-repeat: no-repeat;
+	background-position: left top;
+	color: white;
+} 
+#WahrheitContenViewerDiv table td{
+	padding: 5px;
+} 
+#WahrheitContenViewerDiv p code {
+	font-family: "Courier New", Courier, mono;
+	background-color: silver;
+}
+#WahrheitContenViewerDiv  pre { 
+	padding: 5px; 
+	border: none;
+	font-family: "Courier New", Courier, mono;
+	color: black;
+} 
+
+#WahrheitContenViewerDiv  blockquote { 
+	border: none;
+	font-style: italic;
+	font-family: "Courier New", Courier, mono;
+	border-left: 2px solid #0166d0;
+	color: black;
+} 
+
+#WahrheitContenViewerDiv  blockquote p {
+	padding: 5px; 
+}
+
+#WahrheitContenViewerDiv ul { 
+	list-style-type: disc; 
+}
+#WahrheitContenViewerDiv ol { 
+	list-style-type: decimal; 
+}
+
+
+/* Highlight */
+
+.hljs {
+  display: block; padding: 0.5em;
+  color: #333;
+  background: #f8f8f8
+}
+
+.hljs-comment,
+.hljs-template_comment,
+.diff .hljs-header,
+.hljs-javadoc {
+  color: #998;
+  font-style: italic
+}
+
+.hljs-keyword,
+.css .rule .hljs-keyword,
+.hljs-winutils,
+.javascript .hljs-title,
+.nginx .hljs-title,
+.hljs-subst,
+.hljs-request,
+.hljs-status {
+  color: #333;
+  font-weight: bold
+}
+
+.hljs-number,
+.hljs-hexcolor,
+.ruby .hljs-constant {
+  color: #099;
+}
+
+.hljs-string,
+.hljs-tag .hljs-value,
+.hljs-phpdoc,
+.tex .hljs-formula {
+  color: #d14
+}
+
+.hljs-title,
+.hljs-id,
+.coffeescript .hljs-params,
+.scss .hljs-preprocessor {
+  color: #900;
+  font-weight: bold
+}
+
+.javascript .hljs-title,
+.lisp .hljs-title,
+.clojure .hljs-title,
+.hljs-subst {
+  font-weight: normal
+}
+
+.hljs-class .hljs-title,
+.haskell .hljs-type,
+.vhdl .hljs-literal,
+.tex .hljs-command {
+  color: #458;
+  font-weight: bold
+}
+
+.hljs-tag,
+.hljs-tag .hljs-title,
+.hljs-rules .hljs-property,
+.django .hljs-tag .hljs-keyword {
+  color: #000080;
+  font-weight: normal
+}
+
+.hljs-attribute,
+.hljs-variable,
+.lisp .hljs-body {
+  color: #008080
+}
+
+.hljs-regexp {
+  color: #009926
+}
+
+.hljs-symbol,
+.ruby .hljs-symbol .hljs-string,
+.lisp .hljs-keyword,
+.tex .hljs-special,
+.hljs-prompt {
+  color: #990073
+}
+
+.hljs-built_in,
+.lisp .hljs-title,
+.clojure .hljs-built_in {
+  color: #0086b3
+}
+
+.hljs-preprocessor,
+.hljs-pragma,
+.hljs-pi,
+.hljs-doctype,
+.hljs-shebang,
+.hljs-cdata {
+  color: #999;
+  font-weight: bold
+}
+
+.hljs-deletion {
+  background: #fdd
+}
+
+.hljs-addition {
+  background: #dfd
+}
+
+.diff .hljs-change {
+  background: #0086b3
+}
+
+.hljs-chunk {
+  color: #aaa
+}

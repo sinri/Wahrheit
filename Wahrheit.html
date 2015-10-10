@@ -1,0 +1,104 @@
+<!-- This div,#WahrheitContainer would be contained in #Wahrheit -->
+<div id="WahrheitContainer">
+	<div id="WahrheitTitleBox">
+		<input type="text" id="WahrheitTitleInput" placeholder="Title"/>
+	</div>
+	<div id="WahrheitToolBox">
+		<!-- HEADER -->
+		<div class="WahrheitToolButton">
+			<a href="javascript:void(0);" title="Header of level 1, with # ahead." onclick="Wahrheit.insertHeader(1);">H1</a>
+		</div>
+		<div class="WahrheitToolButton">
+			<a href="javascript:void(0);" title="Header of level 2, with ## ahead." onclick="Wahrheit.insertHeader(2);">H2</a>
+		</div>
+		<div class="WahrheitToolButton">
+			<a href="javascript:void(0);" title="Header of level 3, with ### ahead." onclick="Wahrheit.insertHeader(3);">H3</a>
+		</div>
+		<div class="WahrheitToolButton">
+			<a href="javascript:void(0);" title="Header of level 4, with #### ahead." onclick="Wahrheit.insertHeader(4);">H4</a>
+		</div>
+		<div class="WahrheitToolButton">
+			<a href="javascript:void(0);" title="Header of level 5, with ##### ahead." onclick="Wahrheit.insertHeader(5);">H5</a>
+		</div>
+		<div class="WahrheitToolButton">
+			<a href="javascript:void(0);" title="Header of level 6, with ###### ahead." onclick="Wahrheit.insertHeader(6);">H6</a>
+		</div>
+
+		<div class="WahrheitToolSpace"></div>
+		
+		<!-- TEXT STYLE -->
+		<div class="WahrheitToolButton">
+			<a href="javascript:void(0);" title="Emphasis with blod font, use _X_ or *X* ." onclick="Wahrheit.insertStrong();"><strong>B</strong></a>
+		</div>
+		<div class="WahrheitToolButton">
+			<a href="javascript:void(0);" title="Emphasis with italic font, use __X__ or **X** ." onclick="Wahrheit.insertItalic();"><em>I</em></a>
+		</div>
+		<div class="WahrheitToolButton">
+			<a href="javascript:void(0);" title="Strikethrough, use ~~X~~ ." onclick="Wahrheit.insertStrikethrough();"><del>D</del></a>
+		</div>
+
+		<div class="WahrheitToolSpace"></div>
+		
+		<!-- CODE -->
+		<div class="WahrheitToolButton">
+			<a href="javascript:void(0);" title="Code Block, prefix with a tab." onclick="Wahrheit.insertCodeBlock();">{;}</a>
+		</div>
+		<div class="WahrheitToolButton">
+			<a href="javascript:void(0);" title="Inline Code, use `X`." onclick="Wahrheit.insertInlineCode();">&lt;/&gt;</a>
+		</div>
+
+		<div class="WahrheitToolSpace"></div>
+
+		<!-- Quote -->
+		<div class="WahrheitToolButton">
+			<a href="javascript:void(0);" title="Quote block, use prefex of > ." onclick="Wahrheit.insertQuoteBlock();">「」</a>
+		</div>
+
+		<div class="WahrheitToolSpace"></div>
+
+		<!-- Line -->
+		<div class="WahrheitToolButton">
+			<a href="javascript:void(0);" title="Horizonal line, use ----." onclick="Wahrheit.insertLine();">－</a>
+		</div>
+
+		<div class="WahrheitToolSpace"></div>
+
+
+		<!-- LIST -->
+		<div class="WahrheitToolButton">
+			<a href="javascript:void(0);" title="List of dist style, use prefix *, + or - ." onclick="Wahrheit.insertList('*');">≡<!-- · --></a>
+		</div>
+		<div class="WahrheitToolButton">
+			<a href="javascript:void(0);" title="List of decimal style, use prefix 1. ." onclick="Wahrheit.insertList('1.');">1.</a>
+		</div>
+		<div class="WahrheitToolButton">
+			<a href="javascript:void(0);" title="Table." onclick="Wahrheit.insertTable();">▓</a>
+		</div>
+
+		<div class="WahrheitToolSpace"></div>
+
+		<!-- Link -->
+		<div class="WahrheitToolButton">
+			<a href="javascript:void(0);" title="Link, use [Text](URL)." onclick="Wahrheit.insertLink('Title','Link');"><!-- 🌐 -->🌎</a>
+		</div>
+		<div class="WahrheitToolButton">
+			<a href="javascript:void(0);" title='Image, use ![Text](URL "TITLE").' onclick="Wahrheit.insertImage('Title','Link','alt');">🎑</a>
+		</div>
+		<div class="WahrheitToolButton">
+			<a href="javascript:void(0);" title='Image with link, use [![TEXT](LINK_URL)](IMAGE_URL "TITLE").' onclick="Wahrheit.insertImageWithLink('Title','ImageURL','Link','alt');">🚀</a>
+		</div>
+
+		<div class="WahrheitToolSpace"></div>
+
+		<div style="clear: both;"></div>
+	</div>
+	<div id="WahrheitContentBox">
+		<div id="WahrheitContentEditor">
+			<textarea id="WahrheitContentEditorTA"></textarea>
+		</div>
+		<div id="WahrheitContentViewer">
+			<div id="WahrheitContenViewerDiv"></div>
+		</div>
+		<div style="clear: both;"></div>
+	</div>
+</div>

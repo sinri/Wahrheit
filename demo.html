@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+    	<title>Wahrheit Demo</title>
+        <meta charset="utf-8"> 
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="Wahrheit.css">
+		<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="Wahrheit.js"></script>
+		<script type="text/javascript">
+        $("document").ready(function(){
+        	//define pathToWahrheit, under which the Wahrheit Files stores.
+        	var pathToWahrheit=document.URL.slice(0,document.URL.lastIndexOf('/'))+'/';
+        	
+        	console.log(pathToWahrheit);
+        	Wahrheit.init(pathToWahrheit);
+        });
+        </script>
+	</head>
+	<body>
+		<div id="header">
+			<h1>Wahrheit Demo</h1>
+		</div>
+		<div id="Wahrheit">
+		</div>
+	</body>
+</html>
