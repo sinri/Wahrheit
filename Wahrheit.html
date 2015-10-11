@@ -66,26 +66,31 @@
 
 		<!-- LIST -->
 		<div class="WahrheitToolButton">
-			<a href="javascript:void(0);" title="List of dist style, use prefix *, + or - ." onclick="Wahrheit.insertList('*');">≡<!-- · --></a>
+			<a href="javascript:void(0);" title="List of dist style, use prefix *, + or - ." onclick="Wahrheit.insertList('*');">◉<!-- · --></a>
 		</div>
 		<div class="WahrheitToolButton">
-			<a href="javascript:void(0);" title="List of decimal style, use prefix 1. ." onclick="Wahrheit.insertList('1.');">1.</a>
+			<a href="javascript:void(0);" title="List of decimal style, use prefix 1. ." onclick="Wahrheit.insertList('1.');">№</a>
 		</div>
+
+		<div class="WahrheitToolSpace"></div>
+
+		<!-- Table -->
+
 		<div class="WahrheitToolButton">
-			<a href="javascript:void(0);" title="Table." onclick="Wahrheit.insertTable();">▓</a>
+			<a href="javascript:void(0);" title="Table." onclick="Wahrheit.showDialog('WahrheitTableDialog');">📐</a>
 		</div>
 
 		<div class="WahrheitToolSpace"></div>
 
 		<!-- Link -->
 		<div class="WahrheitToolButton">
-			<a href="javascript:void(0);" title="Link, use [Text](URL)." onclick="Wahrheit.insertLink('Title','Link');"><!-- 🌐 -->🌎</a>
+			<a href="javascript:void(0);" title="Link, use [Text](URL)." onclick="Wahrheit.showDialog('WahrheitLinkDialog');"><!-- 🌐 -->🌎</a>
 		</div>
 		<div class="WahrheitToolButton">
-			<a href="javascript:void(0);" title='Image, use ![Text](URL "TITLE").' onclick="Wahrheit.insertImage('Title','Link','alt');">🎑</a>
+			<a href="javascript:void(0);" title='Image, use ![Text](URL "TITLE").' onclick="Wahrheit.showDialog('WahrheitImageDialog');">🎑</a>
 		</div>
 		<div class="WahrheitToolButton">
-			<a href="javascript:void(0);" title='Image with link, use [![TEXT](LINK_URL)](IMAGE_URL "TITLE").' onclick="Wahrheit.insertImageWithLink('Title','ImageURL','Link','alt');">🚀</a>
+			<a href="javascript:void(0);" title='Image with link, use [![TEXT](LINK_URL)](IMAGE_URL "TITLE").' onclick="Wahrheit.showDialog('WahrheitImageLinkDialog');">🚀</a>
 		</div>
 
 		<div class="WahrheitToolSpace"></div>
@@ -100,5 +105,121 @@
 			<div id="WahrheitContenViewerDiv"></div>
 		</div>
 		<div style="clear: both;"></div>
+	</div>
+</div>
+
+<!-- Model Box -->
+<div id="WahrheitLinkDialogBackground">
+</div>
+<div id="WahrheitTableDialog" class="WahrheitDialog">
+	<div class="WahrheitDialogTitle">
+		<div style="float:left;">
+			Insert Table
+		</div>
+		<div style="float:right;">
+			<a href="javascript:void(0)" style="text-decoration: none;" onclick="Wahrheit.hideDialog('WahrheitTableDialog');"> ╳ </a>
+		</div>
+		<div style="clear: both;"></div>
+	</div>
+	<div class="WahrheitDialogBody">
+		<dl>
+			<dt></dt>
+			<dd>Table Size</dd>
+			<dt>Rows</dt>
+			<dd><input type="text" id="WahrheitTableDialogRowsInput" value='3' style="width: 40px;text-align: center;"></dd>
+			<dt>Columns</dt>
+			<dd><input type="text" id="WahrheitTableDialogColumnsInput" value='3' style="width: 40px;text-align: center;"></dd>
+			<dt></dt>
+			<dd>
+				<div style="float:right">
+					<input type="button" value="Create" onclick="Wahrheit.insertCertainTable($('#WahrheitTableDialogRowsInput').val(),$('#WahrheitTableDialogColumnsInput').val());Wahrheit.hideDialog('WahrheitTableDialog');">
+				</div>
+				<div style="clear:both;"></div>
+			</dd>			
+		</div>
+	</div>
+</div>
+<div id="WahrheitLinkDialog" class="WahrheitDialog">
+	<div class="WahrheitDialogTitle">
+		<div style="float:left;">
+			Insert Link
+		</div>
+		<div style="float:right;">
+			<a href="javascript:void(0)" style="text-decoration: none;" onclick="Wahrheit.hideDialog('WahrheitLinkDialog');"> ╳ </a>
+		</div>
+		<div style="clear: both;"></div>
+	</div>
+	<div class="WahrheitDialogBody">
+		<dl>
+			<dt><label>Link Text</label></dt>
+			<dd><input type="text" id="WahrheitLinkDialogTextInput" style="width:230px;" value="Text"></dd>
+			<dt><label>Link URL</label></dt>
+			<dd><input type="text" id="WahrheitLinkDialogUrlInput" style="width:230px;" value="http://"></dd>
+			<dt></dt>
+			<dd>
+				<div style="float:right">
+					<input type='button' onclick="Wahrheit.insertLink($('#WahrheitLinkDialogTextInput').val(),$('#WahrheitLinkDialogUrlInput').val());Wahrheit.hideDialog('WahrheitLinkDialog');" value="Insert">
+				</div>
+				<div style="clear:both;"></div>
+			</dd>
+		</dl>
+	</div>
+</div>
+<div id="WahrheitImageDialog" class="WahrheitDialog">
+	<div class="WahrheitDialogTitle">
+		<div style="float:left;">
+			Insert Image
+		</div>
+		<div style="float:right;">
+			<a href="javascript:void(0)" style="text-decoration: none;" onclick="Wahrheit.hideDialog('WahrheitImageDialog');"> ╳ </a>
+		</div>
+		<div style="clear: both;"></div>
+	</div>
+	<div class="WahrheitDialogBody">
+		<dl>
+			<dt><label>Image Text</label></dt>
+			<dd><input type="text" id="WahrheitImageDialogTextInput" style="width:230px;" value="Image"></dd>
+			<dt><label>Image URL</label></dt>
+			<dd><input type="text" id="WahrheitImageDialogUrlInput" style="width:230px;" value="http://"></dd>
+			<dt><label>Tooltip</label></dt>
+			<dd><input type="text" id="WahrheitImageDialogTooltipInput" style="width:230px;" value="One Image"></dd>
+			<dt></dt>
+			<dd>
+				<div style="float:right">
+					<input type='button' onclick="Wahrheit.insertImage($('#WahrheitImageDialogTextInput').val(),$('#WahrheitImageDialogUrlInput').val(),$('#WahrheitImageDialogTooltipInput').val());Wahrheit.hideDialog('WahrheitImageDialog');" value="Insert">
+				</div>
+				<div style="clear:both;"></div>
+			</dd>
+		</dl>
+	</div>
+</div>
+<div id="WahrheitImageLinkDialog" class="WahrheitDialog">
+	<div class="WahrheitDialogTitle">
+		<div style="float:left;">
+			Insert Image
+		</div>
+		<div style="float:right;">
+			<a href="javascript:void(0)" style="text-decoration: none;" onclick="Wahrheit.hideDialog('WahrheitImageLinkDialog');"> ╳ </a>
+		</div>
+		<div style="clear: both;"></div>
+	</div>
+	<div class="WahrheitDialogBody">
+		<dl>
+			<dt><label>Image Text</label></dt>
+			<dd><input type="text" id="WahrheitImageLinkDialogTextInput" style="width:230px;" value="Image"></dd>
+			<dt><label>Image URL</label></dt>
+			<dd><input type="text" id="WahrheitImageLinkDialogImageUrlInput" style="width:230px;" value="http://"></dd>
+			<dt><label>Link URL</label></dt>
+			<dd><input type="text" id="WahrheitImageLinkDialogUrlInput" style="width:230px;" value="http://"></dd>
+			<dt><label>Tooltip</label></dt>
+			<dd><input type="text" id="WahrheitImageLinkDialogTooltipInput" style="width:230px;" value="One Image"></dd>
+			<dt></dt>
+			<dd>
+				<div style="float:right">
+					<input type='button' onclick="Wahrheit.insertImageWithLink($('#WahrheitImageLinkDialogTextInput').val(),$('#WahrheitImageLinkDialogImageUrlInput').val(),$('#WahrheitImageLinkDialogUrlInput').val(),$('#WahrheitImageLinkDialogTooltipInput').val());Wahrheit.hideDialog('WahrheitImageLinkDialog');" value="Insert">
+				</div>
+				<div style="clear:both;"></div>
+			</dd>
+		</dl>
 	</div>
 </div>

@@ -261,6 +261,29 @@ var Wahrheit={
 		this.insertInTA('\n\n'+t+'\n\n');
 		$('#WahrheitContentEditorTA').trigger('keyup');
 	},
+	insertCertainTable: function(rows,cols){
+		// var t = [
+	 //      '|  X   |  A  |  B  |',
+	 //      '|:----:|:----|----:|',
+	 //      '|  X1  |  A1  |  B1  |',
+	 //      '|  X2  |  A2  |  B2  |',
+	 //      '|SUM of above|sum of A|sum of B|',
+	 //    ].join('\n');
+	 	var t='';
+	 	for(var i=0;i<=rows;i++){
+	 		var r='|';
+	 		for(var j=0;j<cols;j++){
+	 			if(i==1){
+	 				r=r+'----'+'|';
+	 			}else{
+	 				r=r+' '+'|';
+	 			}
+	 		}
+	 		t=t+r+'\n';
+	 	}
+		this.insertInTA('\n\n'+t+'\n\n');
+		$('#WahrheitContentEditorTA').trigger('keyup');
+	},
 	insertLink: function(text,LINK_URL){
 		var t='['+text+']('+LINK_URL+')';
 		this.insertInTA(' '+t+' ');
@@ -276,5 +299,13 @@ var Wahrheit={
 		var t='[!['+text+']('+IMG_URL+')]('+LINK_URL+' "'+alt+'")';
 		this.insertInTA(' '+t+' ');
 		$('#WahrheitContentEditorTA').trigger('keyup');
-	}
+	},
+	showDialog: function(dialog_id){
+		$('#WahrheitLinkDialogBackground').css('display','block');
+		$('#'+dialog_id).css('display','block');
+	},
+	hideDialog: function(dialog_id){
+		$('#WahrheitLinkDialogBackground').css('display','none');
+		$('#'+dialog_id).css('display','none');
+	},
 }

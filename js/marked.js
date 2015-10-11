@@ -2,6 +2,9 @@
  * marked - a markdown parser
  * Copyright (c) 2011-2014, Christopher Jeffrey. (MIT Licensed)
  * https://github.com/chjj/marked
+ * ------
+ * modified by Sinri Edogawa
+ * Copyright (c) 2015. (MIT Licensed)
  */
 
 ;(function() {
@@ -399,6 +402,10 @@ Lexer.prototype.token = function(src, top, bq) {
       }
 
       for (i = 0; i < item.cells.length; i++) {
+
+        // This line is added by Sinri Edogawa to fix the last cell missing bug when cell content is empty.
+        if(i==item.cells.length-1)item.cells[i]=item.cells[i]+'|';
+        
         item.cells[i] = item.cells[i]
           .replace(/^ *\| *| *\| *$/g, '')
           .split(/ *\| */);
